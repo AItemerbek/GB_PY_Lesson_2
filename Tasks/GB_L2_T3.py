@@ -20,14 +20,12 @@ n = int(input('Input days quantity: '))
 maxHeatDays = 0
 temp = 0
 
-for i in range(n):
-    temperature = random.randint(-50, 50)
-    print(temperature, end=' ')
-    if temperature > 0:
+dayList = [random.randint(-50, 50) for i in range(n)]
+for i in dayList:
+    if i > 0:
         temp += 1
-    else:
-        temp = 0
-    if temp > maxHeatDays:
+    else: temp = 0
+    if maxHeatDays < temp:
         maxHeatDays = temp
-print(end='\n')
+print(dayList)
 print(maxHeatDays)

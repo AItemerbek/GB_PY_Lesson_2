@@ -14,12 +14,13 @@ minWeight = 10
 maxWeight = 0
 
 n = int(input('Input watermellon quantity: '))
-for i in range(n):
-    weight = random.randint(1,10)
-    print(weight, end= ' ')
-    if weight <= minWeight:
-        minWeight = weight
-    if weight >= maxWeight:
-        maxWeight = weight
-print(end='\n')
+
+waterMellons = [random.randint(1,10) for i in range(n)]
+
+for i in waterMellons:
+    if i <= minWeight:
+        minWeight = i
+    if i >= maxWeight:
+        maxWeight = i
+print(waterMellons)
 print(f'Max = {maxWeight}, Min = {minWeight}')
